@@ -4,6 +4,9 @@ metadata:
   name: todo-backend
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: todo-nats
+    - name: argo-rollouts
   targetNamespace: todo-namespace
   sourceRef:
     kind: GitRepository
@@ -38,6 +41,8 @@ metadata:
   name: broadcaster
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: todo-nats
   targetNamespace: todo-namespace
   sourceRef:
     kind: GitRepository
