@@ -7,6 +7,8 @@ spec:
   interval: 5m
   chart:
     spec:
+      releaseName: prometheus
+      targetNamespace: prometheus
       chart: prometheus
       version: 'latest'
       sourceRef:
@@ -28,6 +30,8 @@ spec:
   interval: 5m
   chart:
     spec:
+      releaseName: argo-rollouts
+      targetNamespace: argo-rollouts
       chart: argo-rollouts
       version: 'latest'
       sourceRef:
