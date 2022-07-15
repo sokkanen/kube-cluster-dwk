@@ -4,4 +4,5 @@ resources:
 - namespaces.yaml
 - helm/argo-rollouts.yaml
 - helm/prometheus.yaml
+- helm/nats.yaml
 - helm/releases.yaml
