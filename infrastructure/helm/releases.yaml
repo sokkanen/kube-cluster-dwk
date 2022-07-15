@@ -35,3 +35,23 @@ spec:
       interval: 1m
   values:
     replicaCount: 1
+
+---
+
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nats
+  namespace: todo-namespace
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: nats
+      sourceRef:
+        kind: HelmRepository
+        name: nats
+        namespace: nats
+      interval: 1m
+  values:
+    replicaCount: 1
