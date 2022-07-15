@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
   name: argo-rollouts
-  namespace: todo-namespace
+  namespace: argo-rollouts
 spec:
   interval: 1m
   url: https://argoproj.github.io/argo-helm/

@@ -1,0 +1,39 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: prometheus
+  namespace: prometheus
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: prometheus
+      version: 'latest'
+      sourceRef:
+        kind: HelmRepository
+        name: prometheus
+        namespace: prometheus
+      interval: 1m
+  values:
+    replicaCount: 1
+
+---
+
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: argo-rollouts
+  namespace: argo-rollouts
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: argo-rollouts
+      version: 'latest'
+      sourceRef:
+        kind: HelmRepository
+        name: argo-rollouts
+        namespace: argo-rollouts
+      interval: 1m
+  values:
+    replicaCount: 1
