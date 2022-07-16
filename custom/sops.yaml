@@ -11,3 +11,7 @@ spec:
     name: app-repo
   path: ./apps/project
   prune: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
