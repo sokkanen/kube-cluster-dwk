@@ -8,7 +8,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: app-repo
-  path: ./
+  path: ./apps/project
   prune: true
   decryption:
     provider: sops
